@@ -1,0 +1,63 @@
+#mainPageHeader {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #E2C794;
+  color: #588B8B;
+  text-align: center;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 30px;
+}
+
+#navBar {
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+table{
+  margin-top: 15px;
+  font-size: 15px;
+  color: #484D6D;
+  font-family: "Lucida Console", Monaco, monospace;
+  width: 40%;
+}
+
+#logoImg {
+  float: left;
+  padding-left: 30px;
+}
+
+#mainPageImg {
+  margin-left: 20%;
+  margin-top: 30px;
+  box-sizing: border-box;
+  float: left;
+  height: 500px;
+  width: 35%;
+}
+
+#mainPageText {
+  margin-right: 15%;
+  margin-top: 30px;
+  box-sizing: border-box;
+  height: 500px;
+  float: right;
+  color: #484D6D;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 15px;
+  width: 30%;
+}
+
+button {
+  width: 300px;
+  height: 100px;
+  background-color: #588B8B;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 100px;
+  font-size: 18px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
