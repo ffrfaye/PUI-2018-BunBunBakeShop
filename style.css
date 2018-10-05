@@ -1,4 +1,4 @@
-#mainPageHeader {
+#mainPageHeader{
   margin-left: 15%;
   margin-right: 15%;
   padding-top: 20px;
@@ -8,23 +8,25 @@
   text-align: center;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 30px;
+  border-radius: 5px;
 }
 
-#logoImg {
+#logoImg{
   float: left;
   padding-left: 30px;
 }
 
-#mainPageImg {
+#mainPageImg{
   margin-left: 20%;
   margin-top: 30px;
   box-sizing: border-box;
   float: left;
   height: 500px;
   width: 35%;
+  border-radius: 10px;
 }
 
-#mainPageText {
+#mainPageText{
   margin-right: 15%;
   margin-top: 30px;
   box-sizing: border-box;
@@ -36,58 +38,49 @@
   width: 30%;
 }
 
-.nav {
+.nav{
   margin-left: 15%;
   margin-right: 15%;
   box-sizing: border-box;
   height: 100px;
 }
 
-.nav a {
-  text-decoration: none;
-  color: #588B8B;
-  width: 200px;
-  height: 20px;
-  margin-top: 25px;
-  display: inline-block;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 14px;
-}
-
-.navProductPage {
-  margin-left: 15%;
-  margin-right: 15%;
-  box-sizing: border-box;
-  height: 100px;
-}
-.navProductPage a {
+.nav a{
   text-decoration: none;
   color: #588B8B;
   width: 150px;
   height: 20px;
-  margin-top: 25px;
+  margin-top: 15px;
   display: inline-block;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
 }
 
-table {
+.hoverTable{
   margin-top: 20px;
 }
 
-button {
+.hoverTable tr{
+  background-color: white;
+}
+
+.hoverTable th:hover{
+  background-color: #FFC7A0;
+}
+
+#mainpageButton{
   width: 300px;
   height: 100px;
-  background-color: #FFC7A0;
-  color: #588B8B;
+  background-color: #3DB6B6;
+  color: white;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 100px;
-  font-size: 18px;
+  font-size: 15px;
   font-family: "Lucida Console", Monaco, monospace;
 }
 
-.productContainer {
+.productContainer{
   display: grid;
   margin-left: 15%;
   margin-right: 15%;
@@ -95,14 +88,123 @@ button {
   grid-gap: 20px;
 }
 
-.product {
+.product{
   box-sizing: border-box;
   background-color: #FFC7A0;
   color: #588B8B;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Lucida Console", Monaco, monospace;
   height: 270px;
   width: 300px;
-  margin-top: 120px;
+  margin-top: 60px;
+}
+
+.product a{
+  text-decoration: none;
+  color: #588B8B;
+  display: inline-block;
+}
+
+.leftColumn{
+  box-sizing: border-box;
+  width: 30%;
+  float: left;
+  margin-left: 15%;
+  margin-top: 80px;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #588B8B;
+}
+
+.leftColumn img{
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1px;
+  height: 500px;
+  width: 500px;
+}
+
+.rightColumn{
+  box-sizing: border-box;
+  width: 30%;
+  float: right;
+  margin-right: 15%;
+  margin-left: 1%;
+  margin-top: 60px;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #3DB6B6;
+}
+
+.productDescription{
+  margin-top: 50px;
+}
+
+.rightColumn h3{
+  color: #ca7b65;
+}
+
+.customizationSection{
+  margin-top: 25px;
+}
+
+.customizationContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.hoverableChoices{
+  margin-top: 3px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #FFC7A0;
+  font-size: 12px;
+  font-family: "Lucida Console", Monaco, monospace;
+  height: 60px;
+  width: 120px;
+  color: #588B8B;
+}
+
+.hoverableChoices a{
+  text-decoration: none;
+  display: inline-block;
+  color: #588B8B;
+}
+
+.chosenChoices{
+  margin-top: 3px;
+  box-sizing: border-box;
+  background-color: #FFC7A0;
+  font-size: 12px;
+  font-family: "Lucida Console", Monaco, monospace;
+  height: 60px;
+  width: 120px;
+  color: #588B8B;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: #ca7b65;
+}
+
+.hoverableChoices:hover{
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: #ca7b65;
+}
+
+#productButtons{
+  margin-top: 100px;
+  width: 200px;
+  height: 60px;
+  background-color: #3DB6B6;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 12px;
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+  float: right;
 }
