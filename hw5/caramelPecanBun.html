@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- Show a nav bar -->
+    <div class="nav">
+      <table class="hoverTable" align="right">
+        <a href="mainpage.html"><img src="BBBS Logo.png" alt="BBBS logo" align="left"></a>
+        <tr>
+          <th><a href="mainpage.html">Home</a></th>
+          <th><a href="about.html">About Us</a></th>
+          <th><a href="account.html">My Account</a></th>
+          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px"></a>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Left column: product image, product details-->
+    <div class="leftColumn">
+      <img src="caramelPecan.jpg" alt="caramel pecan cinnamon roll">
+      <h4 class="productDescription">Description</h4>
+      <p>Delicious caramel pecan flavored cinnamon roll that is soft with a rich nutty flavor.
+        Made with butter, sugar, flour, cinnamon, caramel, and pecans. Baked with love.</p>
+    </div>
+
+    <!-- Right column: product name, customization, and checkout-->
+    <div class="rightColumn">
+      <h2 align="left">Caramel Pecan Cinnamon Bun</h2>
+      <h3 align="right">$5.49</h3>
+
+      <!-- A customization section for flavors -->
+      <div class=customizationSection>
+        <p><strong>Flavor (choose 1)<strong></p>
+        <div class="customizationContainer">
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Orignal</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Orignal (GF)</p>
+          </div>
+          <div class="hoverableChoices">
+            <a href="blackberryBun.html">
+              <p>&nbsp;&nbsp;Blackberry</p>
+            </a>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Pumpkin</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Walnut</p>
+          </div>
+          <div class="chosenChoices">
+            <p>&nbsp;&nbsp;Caremel Pecan</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- A customization section for glazing -->
+      <div class=customizationSection>
+        <p><strong>Glazing (choose 1)<strong></p>
+        <div class="customizationContainer">
+          <div class="chosenChoices">
+            <p>&nbsp;&nbsp;None</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Sugar Milk</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Vanilla Milk</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;Double &nbsp;&nbsp;Chocolate</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- A customization section for quantity -->
+      <div class=customizationSection>
+        <p><strong>Quantity (choose 1)<strong></p>
+        <div class="customizationContainer">
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;1</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;3</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;6</p>
+          </div>
+          <div class="hoverableChoices">
+            <p>&nbsp;&nbsp;12</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons for add to cart or buy with one click -->
+      <button type="button" id="productButtons"><strong>Add to Cart</strong></button>
+    </div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <!-- Show a nav bar -->
+    <div class="nav">
+      <table class="hoverTable" align="right">
+        <a href="mainpage.html"><img src="BBBS Logo.png" alt="BBBS logo" align="left"></a>
+        <tr>
+          <th><a href="mainpage.html">Home</a></th>
+          <th><a href="about.html">About Us</a></th>
+          <th><a href="account.html">My Account</a></th>
+          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px"></a>
+        </tr>
+      </table>
+    </div>
+
+    <!-- show a 2x3 grid of different cinnamon rolls -->
+    <div class="productContainer" id="product-list-container">
+      <div class="product" data-tag="original" onclick="bun(original,none)">
+        <img src="original.jpg" alt="original cinnamon roll" width="300px" height="200px">
+        <p align="left">&nbsp;&nbsp;<strong>Original&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+      </div>
+
+      <div class="product" data-tag="blackberry">
+        <a href="blackberryBun.html">
+          <img src="blackberry.jpg" alt="blackberry cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Blackberry&nbsp;&nbsp;&nbsp;&nbsp;$4.99</strong></p>
+        </a>
+      </div>
+
+      <div class="product" data-tag="walnut">
+        <img src="walnut.jpg" alt="walnut cinnamon roll" width="300px" height="200px">
+        <p align="left">&nbsp;&nbsp;<strong>Walnut&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+      </div>
+
+      <div class="product">
+        <img src="gf.jpg" alt="gluten free cinnamon roll" width="300px" height="200px">
+        <p align="left">&nbsp;&nbsp;<strong>Original (GF)&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+      </div>
+
+      <div class="product">
+        <a href="caramelPecanBun.html">
+          <img src="caramelPecan.jpg" alt="caramel pecan cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Caramel Pecan&nbsp;&nbsp;&nbsp;&nbsp;$5.49</strong></p>
+        </a>
+      </div>
+
+      <div class="product">
+        <img src="pumpkin.jpg" alt="pumpkin cinnamon roll" width="300px" height="200px">
+        <p align="left">&nbsp;&nbsp;<strong>Pumpkin&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+      </div>
+    </div>
