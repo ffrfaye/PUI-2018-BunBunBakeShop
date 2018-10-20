@@ -118,8 +118,9 @@
 
 .leftColumn img{
   box-sizing: border-box;
-  margin-top: 8px;
-  height: 350px;
+  border-style: solid;
+  border-width: 1px;
+  height: 500px;
   width: 500px;
 }
 
@@ -152,7 +153,7 @@
   grid-gap: 10px;
 }
 
-.hoverable{
+.hoverableChoices{
   margin-top: 3px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -164,13 +165,13 @@
   color: #588B8B;
 }
 
-.hoverable a{
+.hoverableChoices a{
   text-decoration: none;
   display: inline-block;
   color: #588B8B;
 }
 
-.active{
+.chosenChoices{
   margin-top: 3px;
   box-sizing: border-box;
   background-color: #FFC7A0;
@@ -185,37 +186,7 @@
   border-color: #ca7b65;
 }
 
-.quantActive{
-  margin-top: 3px;
-  box-sizing: border-box;
-  background-color: #FFC7A0;
-  font-size: 12px;
-  font-family: "Lucida Console", Monaco, monospace;
-  height: 60px;
-  width: 120px;
-  color: #588B8B;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 5px;
-  border-color: #ca7b65;
-}
-
-.glazeActive{
-  margin-top: 3px;
-  box-sizing: border-box;
-  background-color: #FFC7A0;
-  font-size: 12px;
-  font-family: "Lucida Console", Monaco, monospace;
-  height: 60px;
-  width: 120px;
-  color: #588B8B;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 5px;
-  border-color: #ca7b65;
-}
-
-.hoverable:hover{
+.hoverableChoices:hover{
   border-style: solid;
   border-width: 3px;
   border-radius: 5px;
