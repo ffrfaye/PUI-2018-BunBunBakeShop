@@ -7,7 +7,47 @@
     <!-- style -->
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
+
+    <!-- Sidebar: shopping cart-->
+    <div id="sidebar" class="sidebar-cart">
+      <p><strong>Shopping Cart</strong></p>
+      <hr>
+
+      <div id="cartContent">
+        <div class="emptyMessage cartActive" id= emptyMessage>
+          <div class="emptyMessage">Your cart is currently empty.</div>
+          <div class="emptyMessage">Why not pick up some buns?</div>
+        </div>
+        <div class="itemSection cartInactive">
+          <div class="cartItem"></div>
+        </div>
+      </div>
+      <hr>
+
+      <div id="promoCode">
+        <p>Have a promo code?</p>
+        <img src="expandToggle.png"></img>
+      </div>
+      <hr>
+
+      <div id="priceSection">
+        <div class="priceLabel">
+          <div>Subtotal</div>
+          <div class="priceText">Shipping</div>
+        </div>
+        <div class="priceValue">
+          <div id="cartPrice">$ 0</div>
+          <div class="priceText">Free</div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <div id="totalLabel">Total</div>
+        <div id="totalPrice">$ 0</div>
+      </div>
+    </div>
 
     <!-- Show a nav bar -->
     <div class="nav">
@@ -23,6 +63,8 @@
         </tr>
       </table>
     </div>
+
+
 
     <!-- Left column: product image, product details-->
     <div class="leftColumn">
@@ -103,11 +145,6 @@
       <!-- Buttons for add to cart or buy with one click -->
       <button type="button" id="productButtons"><strong>Add to Cart</strong></button>
 
-    <div id=sidebar class="sidebar-cart hidden">
-      <p>Shopping Cart</p>
-      <ul>
-        <li>
 
-    </div>
 
     </div>
