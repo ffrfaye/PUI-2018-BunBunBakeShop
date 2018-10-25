@@ -7,10 +7,12 @@ var arrayNames=["Original","Original (GF)","Blackberry",
 var arrayGlazing=["None","Sugar Milk","Vanilla Milk","Double Chocolate"];
 var arrayPrice=["$3.99","$3.99","$4.99",
 "$4.19","$4.19","$5.49"];
+var arrayPriceNum=[3.99,3.99,4.99,4.19,4.19,5.49];
 var arrayDescription=" flavored cinnamon roll that is soft and filled with fruity sweetness. Made with butter, sugar, flour, and cinnamon. Baked with love."
 var cartCount=0;
 var savedBun = 0;
 var hasBun = false;
+var addBun;
 
 /*** Fn - select customization options in prod detail ***/
 
@@ -48,20 +50,20 @@ function bun(selection, glazing, quantity) {
   this.glazing = arrayGlazing[glazing];
   this.imgsrc = arrayImgsrc[selection];
   this.price = arrayPrice[selection];
+  this.priceNum = arrayPriceNum[selection];
   this.quantity = quantity;
 }
 
 $(document).ready(function(){
 
-  var bunNode = document.getElementById("cartItem");
+  var cartItemsTable = document.getElementById("cartItems");
 
-  if (hasBun){
-    var list = document.getElementById("item-list");
+  if (localStorage.length>0){
     for(i=0;i<localStorage.length;i++){
-      var addBun = localStorage.getItem(i);
+      addBun = JSON.parse(localStorage.getItem(i));
       console.log(addBun);
-      list.append("<button class='delete-item'>X</button>"+bunNode);
-      $("#cartItemImg").attr("src",addBun.imgsrc);
+      console.log(addBun.imgsrc);
+      createItemRow(cartItemsTable, addBun);
     }
   }
 
@@ -78,5 +80,35 @@ $(document).ready(function(){
     savedBun = savedBun+1;
     hasBun = true;
   })
-
 })
+
+function createItemRow(myTable, bunInfo){
+  var row = myTable.insertRow(0);
+  var deleteCell = row.insertCell(0);
+  var imageCell = row.insertCell(1);
+  var textCell = row.insertCell(2);
+  var quantityCell = row.insertCell(3);
+  var totalCell = row.insertCell(4);
+
+  var deleteButton = document.createElement('button');
+  deleteButton.innerHTML = "X";
+  deleteCell.appendChild(deleteButton);
+  deleteCell.style.width="10%";
+
+  var bunImg = document.createElement('img');
+  bunImg.src = bunInfo.imgsrc;
+  bunImg.style.width = "150px";
+  bunImg.style.height = "100px";
+  imageCell.appendChild(bunImg);
+  imageCell.style.width="30%";
+
+  textCell.innerHTML = bunInfo.name+" Cinnamon Bun<br />Glazing: "+bunInfo.glazing
+  +"<br /><br /><br />"+bunInfo.price;
+  textCell.style.width="30%";
+
+  quantityCell.innerHTML = "Qty: "+bunInfo.quantity;
+  quantityCell.style.width="15%";
+
+  totalCell.innerHTML = "$"+bunInfo.priceNum*bunInfo.quantity;
+  totalCell.style.width="15%";
+}

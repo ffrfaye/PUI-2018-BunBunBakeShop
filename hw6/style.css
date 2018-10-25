@@ -361,7 +361,7 @@
 }
 
 .cartSection{
-  width: 600px;
+  width: 45%;
   padding-top: 100px;
   margin-left: 15%;
   font-family: "Lucida Console", Monaco, monospace;
@@ -392,7 +392,7 @@
 }
 
 .checkoutSection{
-  width: 300px;
+  width: 20%;
   height: 300px;
   margin-top: 80px;
   margin-right: 15%;
@@ -442,4 +442,18 @@
   margin-left: 5px;
   margin-right: 5px;
   font-size: 14px;
+}
+
+#cartItems{
+  box-sizing: border-box;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#cartItems td{
+  padding: 8px;
+  height: 50px;
+  vertical-align: top;
 }
