@@ -11,27 +11,30 @@
   <body>
 
     <!-- Sidebar: shopping cart-->
-    <div id="sidebar" class="sidebar-cart">
+    <div id="sidebar" class="sidebar-cart cartInactive">
       <p><strong>Shopping Cart</strong></p>
       <hr>
 
+      <!-- Shopping cart cart content: empty message and items in cart will be
+      shown here.-->
       <div id="cartContent">
         <div class="emptyMessage cartActive" id= emptyMessage>
           <div class="emptyMessage">Your cart is currently empty.</div>
           <div class="emptyMessage">Why not pick up some buns?</div>
         </div>
         <div class="itemSection cartInactive">
-          <div class="cartItem"></div>
         </div>
       </div>
       <hr>
 
+      <!-- Shopping cart promo code: show promo code related information.-->
       <div id="promoCode">
         <p>Have a promo code?</p>
         <img src="expandToggle.png"></img>
       </div>
       <hr>
 
+      <!-- Shopping cart price section: show price calculation related info.-->
       <div id="priceSection">
         <div class="priceLabel">
           <div>Subtotal</div>
@@ -43,10 +46,17 @@
         </div>
       </div>
       <hr>
+
+      <!-- Shopping cart total price selection-->
       <div>
         <div id="totalLabel">Total</div>
         <div id="totalPrice">$ 0</div>
       </div>
+
+      <!-- Shopping cart checkout button-->
+      <button type="button" class="productButtons" id="checkoutButton">
+        <strong>Checkout</strong>
+      </button>
     </div>
 
     <!-- Show a nav bar -->
@@ -64,14 +74,13 @@
       </table>
     </div>
 
-
-
     <!-- Left column: product image, product details-->
     <div class="leftColumn">
       <img src="blackberry.jpg" alt="blackberry cinnamon roll" id="bunImg">
       <h4 class="productDescription">Description</h4>
-      <p id="bunDescription">Delicious blackberry flavored cinnamon roll that is soft and filled with fruity sweetness.
-        Made with butter, sugar, flour, and cinnamon. Baked with love.</p>
+      <p id="bunDescription">Delicious blackberry flavored cinnamon roll that is
+        soft and filled with fruity sweetness. Made with butter, sugar, flour,
+        and cinnamon. Baked with love.</p>
     </div>
 
     <!-- Right column: product name, customization, and checkout-->
@@ -143,8 +152,8 @@
       </div>
 
       <!-- Buttons for add to cart or buy with one click -->
-      <button type="button" id="productButtons"><strong>Add to Cart</strong></button>
-
-
+      <button type="button" class="productButtons" id="addToCartButton">
+        <strong>Add to Cart</strong>
+      </button>
 
     </div>

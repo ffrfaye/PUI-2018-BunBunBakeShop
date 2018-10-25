@@ -52,7 +52,20 @@ function bun(selection, glazing, quantity) {
 }
 
 $(document).ready(function(){
-  $("#productButtons").click(function(){
+
+  var bunNode = document.getElementById("cartItem");
+
+  if (hasBun){
+    var list = document.getElementById("item-list");
+    for(i=0;i<localStorage.length;i++){
+      var addBun = localStorage.getItem(i);
+      console.log(addBun);
+      list.append("<button class='delete-item'>X</button>"+bunNode);
+      $("#cartItemImg").attr("src",addBun.imgsrc);
+    }
+  }
+
+  $("#addToCartButton").click(function(){
     var selection = $('.active').attr("data-flavor");
     var glazing = $('.glazeActive').attr("data-glazing");
     var quantity = parseInt($('.quantActive').attr("data-quantity"));
@@ -65,7 +78,5 @@ $(document).ready(function(){
     savedBun = savedBun+1;
     hasBun = true;
   })
-  if (hasBun){
 
-  }
 })
