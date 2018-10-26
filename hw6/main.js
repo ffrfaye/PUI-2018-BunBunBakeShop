@@ -56,6 +56,8 @@ function bun(selection, glazing, quantity, index) {
 
 function createItemRow(myTable, bunInfo){
   var row = myTable.insertRow(-1);
+  row.setAttribute("id","itemRow");
+
   var cell_delete = row.insertCell(0);
   var cell_img = row.insertCell(1);
   var cell_text = row.insertCell(2);
@@ -119,13 +121,19 @@ function updatePage(){
 $(document).ready(function(){
   updatePage();
   var cartItemsTable = document.getElementById("cartItems");
+  var itemRow = document.getElementById("itemRow");
   var tableExist = !(cartItemsTable === null);
+  var itemExist = !(itemRow === null);
   console.log(tableExist);
-  if(localStorage.length<=2){
-    $("#emptyMessage").removeClass("cartInactive");
+  console.log(itemExist);
+  if(!itemExist){
+    console.log("add class");
+    $("#emptyMessage").toggleClass("cartInactive");
   }
-  if (localStorage.length>2 && tableExist){
-    $("#emptyMessage").addClass("cartInactive");
+
+
+  if (localStorage.length>=2 && tableExist){
+    $("#emptyMessage").toggleClass("cartInactive");
     for(i=0;i<localStorage.length;i++){
       addBun = JSON.parse(localStorage.getItem(i));
       if (addBun != null) {
@@ -140,11 +148,12 @@ $(document).ready(function(){
     var selection = $('.active').attr("data-flavor");
     var glazing = $('.glazeActive').attr("data-glazing");
     var quantity = parseInt($('.quantActive').attr("data-quantity"));
-    var index = savedBun;
 
-    myBun = new bun(selection, glazing, quantity, index);
     i = localStorage.getItem("savedAmount");
     if (i != null) { savedBun = i; }
+
+    var index = savedBun;
+    myBun = new bun(selection, glazing, quantity, index);
     localStorage.setItem(savedBun,JSON.stringify(myBun));
     savedBun = parseInt(savedBun)+1;
     localStorage.setItem("savedAmount",savedBun);
@@ -159,6 +168,14 @@ function deleteRow(r) {
     console.log(index);
     document.getElementById("cartItems").deleteRow(i);
     localStorage.removeItem(index);
+    savedBun = localStorage.getItem("savedAmount");
+    savedBun = parseInt(savedBun)-1;
+    localStorage.setItem("savedAmount",savedBun);
     updatePage();
-
+    var itemRow = document.getElementById("itemRow");
+    var itemExist = !(itemRow === null);
+    if(!itemExist){
+      console.log("remove class");
+      $("#emptyMessage").toggleClass("cartInactive");
+    }
 }
