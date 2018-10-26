@@ -17,16 +17,21 @@
           <th><a href="mainpage.html">Home</a></th>
           <th><a href="about.html">About Us</a></th>
           <th><a href="account.html">My Account</a></th>
-          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px"></a>
+          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px">
+            <div id="cartCount">0</div>
+          </a>
         </tr>
       </table>
+
     </div>
 
     <!-- show a 2x3 grid of different cinnamon rolls -->
     <div class="productContainer" id="product-list-container">
       <div class="product" data-tag="original" onclick="bun(original,none)">
-        <img src="original.jpg" alt="original cinnamon roll" width="300px" height="200px">
-        <p align="left">&nbsp;&nbsp;<strong>Original&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+        <a href="original.html">
+          <img src="original.jpg" alt="original cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Original&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+        </a>
       </div>
 
       <div class="product" data-tag="blackberry">
@@ -37,13 +42,17 @@
       </div>
 
       <div class="product" data-tag="walnut">
-        <img src="walnut.jpg" alt="walnut cinnamon roll" width="300px" height="200px">
-        <p align="left">&nbsp;&nbsp;<strong>Walnut&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+        <a href="walnut.html">
+          <img src="walnut.jpg" alt="walnut cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Walnut&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+        </a>
       </div>
 
       <div class="product">
-        <img src="gf.jpg" alt="gluten free cinnamon roll" width="300px" height="200px">
-        <p align="left">&nbsp;&nbsp;<strong>Original (GF)&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+        <a href="gf.html">
+          <img src="gf.jpg" alt="gluten free cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Original (GF)&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong></p>
+        </a>
       </div>
 
       <div class="product">
@@ -54,7 +63,9 @@
       </div>
 
       <div class="product">
-        <img src="pumpkin.jpg" alt="pumpkin cinnamon roll" width="300px" height="200px">
-        <p align="left">&nbsp;&nbsp;<strong>Pumpkin&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+        <a href="pumpkin.html">
+          <img src="pumpkin.jpg" alt="pumpkin cinnamon roll" width="300px" height="200px">
+          <p align="left">&nbsp;&nbsp;<strong>Pumpkin&nbsp;&nbsp;&nbsp;&nbsp;$4.19</strong></p>
+        </a>
       </div>
     </div>

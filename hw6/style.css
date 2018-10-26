@@ -222,7 +222,7 @@
   border-color: #ca7b65;
 }
 
-#productButtons{
+.productButtons{
   margin-top: 100px;
   width: 200px;
   height: 60px;
@@ -236,4 +236,224 @@
   font-family: "Lucida Console", Monaco, monospace;
   text-align: center;
   float: right;
+}
+
+
+
+#sidebar{
+  right: 0;
+  top: 0;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  width: 350px;
+  height: 100%;
+  background: #ffe2c9;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #847568;
+  font-size: 14px;
+}
+
+#sidebar hr{
+  margin-left: 30px;
+  margin-right: 30px;
+  border-color: #847568;
+  border-width: 0.5px;
+}
+
+#sidebar p{
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+#cartContent{
+  height: 45%;
+  margin-left: 38px;
+  margin-right: 8px;
+}
+
+#emptyMessage{
+  padding-top: 50px;
+  margin-left: 5%;
+  margin-bottom: 15%;
+  font-size: 15px;
+}
+
+.emptyMessage{
+  padding-top: 30px;
+}
+
+.cartActive{
+
+}
+
+.cartInactive{
+  display: none;
+}
+
+#promoCode{
+  height: 4%;
+  margin-left: 15px;
+  margin-right: 20px;
+}
+
+#promoCode p{
+
+  margin-top: 10px;
+  margin-bottom: 12px;
+  display: block;
+  float: left;
+}
+
+#promoCode img{
+  display: block;
+  float: right;
+
+  margin-top: 14px;
+  margin-bottom: 5px;
+  width: 20px;
+  height: 12px;
+}
+
+#priceSection{
+  height: 8%;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.priceLabel{
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  float: left;
+}
+
+.priceValue{
+  display: block;
+  float: right;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.priceText{
+  padding-top: 15px;
+}
+
+#totalLabel{
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  float: left;
+}
+
+#totalPrice{
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  float: right;
+}
+
+.cartSection{
+  width: 45%;
+  padding-top: 100px;
+  margin-left: 15%;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #847568;
+  font-size: 14px;
+  border-color: #847568;
+  border-width: 0.5px;
+  box-sizing: border-box;
+  float: left;
+}
+
+#cartTitle{
+  font-size: 18px;
+  margin-bottom: 3%;
+}
+
+#emptyCartButton{
+  width: 200px;
+  height: 55px;
+  background-color: #3DB6B6;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  font-family: "Lucida Console", Monaco, monospace;
+  box-sizing: border-box;
+  float: right;
+}
+
+.checkoutSection{
+  width: 20%;
+  height: 300px;
+  margin-top: 80px;
+  margin-right: 15%;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: #847568;
+  font-size: 13px;
+  border-color: #847568;
+  border-width: 0.5px;
+  background-color: #ffe2c9;
+  box-sizing: border-box;
+  float: right;
+}
+
+.checkoutContent{
+  margin-left: 12px;
+  margin-top: 23px;
+  margin-right: 12px;
+}
+
+.checkoutContent hr{
+  width: 95%;
+}
+
+#summaryTitle{
+  font-size: 15px;
+  margin-left: 12px;
+  height: 20px;
+}
+
+.priceSection{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.totalSection{
+  margin-top: 12px;
+  height: 20px;
+}
+
+#checkoutButton{
+  box-sizing: border-box;
+  float: right;
+  width: 96%;
+  height: 50px;
+  margin-top: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.cartItems{
+  box-sizing: border-box;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.cartItems td{
+  padding: 8px;
+  height: 50px;
+  vertical-align: top;
 }

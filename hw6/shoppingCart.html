@@ -4,6 +4,7 @@
     <!-- style -->
     <link rel="stylesheet" href="style.css">
     <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js" type="text/javascript"></script>
   </head>
   <body>
@@ -16,10 +17,61 @@
           <th><a href="mainpage.html">Home</a></th>
           <th><a href="about.html">About Us</a></th>
           <th><a href="account.html">My Account</a></th>
-          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px"></a>
+          <th><a href="shoppingCart.html"><img src="Icon- Cart.png" alt="shopping cart logo" width="30px" height="30px">
+            <div id="cartCount">0</div>
+          </a>
         </tr>
       </table>
     </div>
 
 
-    <div class=""
+    <div class="cartSection">
+      <div id="cartTitle"><strong>My Shopping Cart</strong></div>
+      <hr>
+      <div class="emptyMessage cartInactive" id="emptyMessage">
+        <div class="emptyMessage">Your cart is currently empty!</div>
+        <div class="emptyMessage">Why not pick up some buns?</div>
+      </div>
+      <table id="cartItems"></table>
+      <hr>
+      <div class="cartActive">
+        <a href="products.html"><button type="button" id="emptyCartButton">
+          <strong>Browse Buns Now!</strong></button></a>
+      </div>
+
+
+    </div>
+
+    <div class="checkoutSection">
+      <div class="checkoutContent">
+        <div id="summaryTitle"><strong>Order Summary</strong></div>
+        <hr>
+        <!-- Summary price section: show price calculation related info.-->
+        <div class="priceSection">
+          <div class="priceLabel">
+            <div>Subtotal</div>
+            <div class="priceText">Shipping</div>
+          </div>
+          <div class="priceValue">
+            <div id="cartPrice">$ 0</div>
+            <div class="priceText">Free</div>
+          </div>
+        </div>
+        <hr>
+        <!-- Summary promo code: show promo code related information.-->
+        <div id="promoCode">
+          <p>Have a promo code?</p>
+          <img src="expandToggle.png"></img>
+        </div>
+        <hr>
+        <!-- Summary total price selection-->
+        <div class="totalSection">
+          <div id="totalLabel"><strong>Total</strong></div>
+          <div id="totalPrice"><strong>$ 0</strong></div>
+        </div>
+        <!-- Summary checkout button-->
+        <button type="button" class="productButtons" id="checkoutButton">
+          <strong>Checkout</strong>
+        </button>
+      </div>
+    </div>
