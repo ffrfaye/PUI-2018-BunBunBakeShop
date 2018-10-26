@@ -9,10 +9,9 @@ var arrayPrice=["$3.99","$3.99","$4.99",
 "$4.19","$4.19","$5.49"];
 var arrayPriceNum=[3.99,3.99,4.99,4.19,4.19,5.49];
 var arrayDescription=" flavored cinnamon roll that is soft and filled with fruity sweetness. Made with butter, sugar, flour, and cinnamon. Baked with love."
-var cartCount=0;
 var savedBun = 0;
-var hasBun = false;
 var addBun;
+var tableNeedsUpdate = true;
 
 /*** Fn - select customization options in prod detail ***/
 
@@ -29,7 +28,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $(".glaze").click(function(){
+  $(".glazing").click(function(){
   	$(".glazeActive").removeClass("glazeActive");
   	$(this).toggleClass("glazeActive");
   });
@@ -57,55 +56,58 @@ function bun(selection, glazing, quantity, index) {
 
 function createItemRow(myTable, bunInfo){
   var row = myTable.insertRow(-1);
-  var deleteCell = row.insertCell(0);
-  var imageCell = row.insertCell(1);
-  var textCell = row.insertCell(2);
-  var quantityCell = row.insertCell(3);
-  var totalCell = row.insertCell(4);
+  var cell_delete = row.insertCell(0);
+  var cell_img = row.insertCell(1);
+  var cell_text = row.insertCell(2);
+  var cell_quant = row.insertCell(3);
+  var cell_total = row.insertCell(4);
 
   var deleteButton = document.createElement('button');
   deleteButton.setAttribute("id", "deleteButton");
   deleteButton.setAttribute("onclick","deleteRow(this)")
   deleteButton.setAttribute("index",bunInfo.index);
   deleteButton.innerHTML = "X";
-  deleteCell.appendChild(deleteButton);
-  deleteCell.style.width="5%";
+  cell_delete.appendChild(deleteButton);
+  cell_delete.style.width="5%";
 
   var bunImg = document.createElement('img');
   bunImg.src = bunInfo.imgsrc;
   bunImg.style.width = "150px";
   bunImg.style.height = "100px";
-  imageCell.appendChild(bunImg);
-  imageCell.style.width="30%";
+  cell_img.appendChild(bunImg);
+  cell_img.style.width="30%";
 
-  textCell.innerHTML = bunInfo.name+" Cinnamon Bun<br />Glazing: "+bunInfo.glazing
+  cell_text.innerHTML = bunInfo.name+" Cinnamon Bun<br />Glazing: "+bunInfo.glazing
   +"<br /><br />"+bunInfo.price;
-  textCell.style.width="35%";
+  cell_text.style.width="35%";
 
-  quantityCell.setAttribute("class","itemQuant");
-  quantityCell.setAttribute("data-quant",bunInfo.quantity);
-  quantityCell.innerHTML = "Qty: "+bunInfo.quantity;
-  quantityCell.style.width="15%";
+  cell_quant.setAttribute("class","itemQuant");
+  cell_quant.setAttribute("data-quant",bunInfo.quantity);
+  cell_quant.innerHTML = "Qty: "+bunInfo.quantity;
+  cell_quant.style.width="15%";
 
-  totalCell.setAttribute("class","itemTotalPrice");
-  totalCell.setAttribute("data-price",bunInfo.priceNum*bunInfo.quantity);
-  totalCell.innerHTML = "$"+bunInfo.priceNum*bunInfo.quantity;
-  totalCell.style.width="15%";
-
+  cell_total.setAttribute("class","itemTotalPrice");
+  cell_total.setAttribute("data-price",bunInfo.priceNum*bunInfo.quantity);
+  var totalCellPrice = bunInfo.priceNum*bunInfo.quantity;
+  totalCellPrice = totalCellPrice.toFixed(2);
+  cell_total.innerHTML = "$"+totalCellPrice;
+  cell_total.style.width="15%";
 }
 
 function updatePage(){
   var totalPrice = 0;
   var listPrice = document.getElementsByClassName("itemTotalPrice");
-  console.log(listPrice)
   for (var i = 0; i < listPrice.length; i++ ){
-    totalPrice += parseInt(listPrice[i].getAttribute("data-price"));
+    totalPrice += parseFloat(listPrice[i].getAttribute("data-price"));
   }
+  totalPrice = totalPrice.toFixed(2);
 
   var totalCount = 0;
-  var listCount = document.getElementsByClassName("itemQuant");
-  for (var i = 0; i < listCount.length; i++ ){
-    totalCount += parseInt(listCount[i].getAttribute("data-quant"));
+  for(i=0;i<localStorage.length;i++){
+    indivBun = JSON.parse(localStorage.getItem(i));
+    if(indivBun != null){
+      totalCount = totalCount + indivBun.quantity;
+    }
   }
 
   $("#cartPrice").html("$"+totalPrice);
@@ -115,15 +117,23 @@ function updatePage(){
 
 /** The function that runs all the functions! **/
 $(document).ready(function(){
-
+  updatePage();
   var cartItemsTable = document.getElementById("cartItems");
-
-  if (localStorage.length>0){
+  var tableExist = !(cartItemsTable === null);
+  console.log(tableExist);
+  if(localStorage.length<=2){
+    $("#emptyMessage").removeClass("cartInactive");
+  }
+  if (localStorage.length>2 && tableExist){
+    $("#emptyMessage").addClass("cartInactive");
     for(i=0;i<localStorage.length;i++){
       addBun = JSON.parse(localStorage.getItem(i));
-      createItemRow(cartItemsTable, addBun);
+      if (addBun != null) {
+        createItemRow(cartItemsTable, addBun);
+      }
     }
     updatePage();
+    tableNeedsUpdate = false;
   }
 
   $("#addToCartButton").click(function(){
@@ -132,13 +142,14 @@ $(document).ready(function(){
     var quantity = parseInt($('.quantActive').attr("data-quantity"));
     var index = savedBun;
 
-    cartCount = cartCount+quantity;
-    $("#cartCount").html(cartCount);
-
     myBun = new bun(selection, glazing, quantity, index);
+    i = localStorage.getItem("savedAmount");
+    if (i != null) { savedBun = i; }
     localStorage.setItem(savedBun,JSON.stringify(myBun));
-    savedBun = savedBun+1;
-    hasBun = true;
+    savedBun = parseInt(savedBun)+1;
+    localStorage.setItem("savedAmount",savedBun);
+
+    updatePage();
   })
 })
 
@@ -149,4 +160,5 @@ function deleteRow(r) {
     document.getElementById("cartItems").deleteRow(i);
     localStorage.removeItem(index);
     updatePage();
+
 }

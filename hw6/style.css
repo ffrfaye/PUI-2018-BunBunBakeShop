@@ -444,7 +444,7 @@
   font-size: 14px;
 }
 
-#cartItems{
+.cartItems{
   box-sizing: border-box;
   text-decoration: none;
   display: inline-block;
@@ -452,7 +452,7 @@
   table-layout: fixed;
 }
 
-#cartItems td{
+.cartItems td{
   padding: 8px;
   height: 50px;
   vertical-align: top;
